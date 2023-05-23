@@ -10,15 +10,17 @@ int main()
         scanf("%d",&b[a]);
         if(x[ith]==0 && b[a]%2==1)
         {
-            printf("NO");
+          printf("NO");
         }
-        else if (b[a]%2==0 && b[a]!=0)
+        else if( b[a]%2==0 && b[a]!=0)
         {
-            printf("YES");
+          printf("YES"); 
         }
-        else{
-            printf("NO");
+        else
+        {
+           printf("NO");
         }
-        
+    
     }
+    
 }
