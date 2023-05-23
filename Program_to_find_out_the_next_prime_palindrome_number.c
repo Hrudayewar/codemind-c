@@ -1,32 +1,52 @@
 #include<stdio.h>
-#include <math.h>
+int pal(int x)
+{
+    int t,r,rev=0;
+    t=x;
+    while(t!=0)
+   {
+    r=t%10;
+    rev=rev*10+r;
+    t=t/10;
+   }
+   if(x==rev)
+   {
+       return 1;
+   }
+   else
+   {
+       return 0;
+   }
+}
+int prime(int v)
+{
+    int i,c=0;
+    for(i=1;i<=v;i++)
+    {
+        if(v%i==0)
+        {
+            c++;
+        }
+    }
+    if(c==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 int main()
 {
-  long n,t,r=0,c,d;
-  scanf("%ld", &n);
-  while (1)
-  {
-    n++;
-    t=n;
-    while(t)
+    int n,j;
+    scanf("%d",&n);
+    for(j=n+1;;j++)
     {
-      r=r*10;
-      r=r+t%10;
-      t=t/10;
+        if(prime(j) && pal(j))
+        {
+            printf("%d",j);
+            break;
+        }
     }
-    if(r==n)
-    {
-      d=(int)sqrt(n);
-      for(c=2;c<=d;c++)
-      {
-        if(n%c==0)
-          break;
-      }
-      if(c==d+1)
-        break;
-    }
-    r=0;
-  }
-  printf("%ld
-",n);
 }
